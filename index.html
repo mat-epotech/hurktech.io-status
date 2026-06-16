@@ -328,6 +328,37 @@ h1{
 
 </div>
 
+<script>
+
+const DASHBOARD_URL =
+'https://192.168.42.45/dashboard/dashboard_login.php';
+
+function checkServer(){
+
+    const img = new Image();
+
+    img.onload = function(){
+
+        window.location.href = DASHBOARD_URL;
+
+    };
+
+    img.onerror = function(){
+
+        setTimeout(checkServer, 5000);
+
+    };
+
+    img.src =
+    'https://192.168.42.45/favicon.ico?t=' +
+    Date.now();
+
+}
+
+setTimeout(checkServer, 10000);
+
+</script>
+    
 </body>
 
 </html>
